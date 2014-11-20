@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
@@ -27,16 +29,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
     }
 
 
-    public void onHelpClicked(View view){
-        if(((EditText)findViewById(R.id.phone_text_field)).getText().length()==11||((EditText)findViewById(R.id.phone_text_field)).getText().length()==14){
+    public void onClicked(View view){
+        switch (view.getId()){
+            case R.id.button_help:
 
-            sendSMS(((EditText)findViewById(R.id.phone_text_field)).getText().toString(),helpString);
+                    MySQLiteHelper helper = new MySQLiteHelper(getBaseContext());
 
-        }else{
-            Toast.makeText(getBaseContext(),"Not a valid number",Toast.LENGTH_LONG);
+                    ArrayList<String> list = helper.getAllContacts();
+
+                    do{
+                        sendSMS(list.remove(0),helpString);
+                    }while(!list.isEmpty());
+                    helper.close();
+
+
+                break;
+            case R.id.settings_button:
+                startActivity(new Intent(getBaseContext(),ActivitySettings.class));
+                break;
+            default:
+                break;
         }
     }
 

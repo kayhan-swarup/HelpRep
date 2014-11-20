@@ -21,15 +21,15 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_alignParentRight="true"
+        android:onClick="onClicked"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/settings_button_drawable"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Input Phone No."
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/phone_text_field"
-        android:layout_below="@+id/textView_help"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

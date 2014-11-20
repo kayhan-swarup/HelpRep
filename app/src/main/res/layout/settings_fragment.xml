@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.swarup.kayhan.help.ActivitySettings$PlaceholderFragment">
+
+    <LinearLayout
+        android:id="@+id/contact_details_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include android:id="@+id/contact0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/phone_details_layout"
+            />
+        <include android:id="@+id/contact1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/phone_details_layout"
+            />
+        <include android:id="@+id/contact2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/phone_details_layout"
+            />
+    </LinearLayout>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onSettingsClicked"
+        android:id="@+id/save_button"
+        android:text="@string/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/back_button"
+        android:onClick="onSettingsClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
