@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 
 
     }
-
+// test for push
 
     public void onClicked(View view){
         switch (view.getId()){
