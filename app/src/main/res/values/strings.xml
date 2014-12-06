@@ -10,5 +10,6 @@
     <string name="save_button">Save Changes</string>
     <string name="title_activity_activity_settings">ActivitySetting</string>
     <string name="back_button">Back</string>
+    <string name="title_activity_help">HelpActivity</string>
 
 </resources>
