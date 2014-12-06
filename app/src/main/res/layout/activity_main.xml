@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView_help"
+        android:id="@+id/address"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -17,9 +17,17 @@
         android:layout_height="wrap_content"
         android:text="HELP"
         android:id="@+id/button_help"
-        android:onClick="onHelpClicked"
+        android:onClick="onClicked"
+        android:textColor="#ffffff"
+        android:background="@drawable/help_button_drawable"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/getLocation"
+        android:onClick="getAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
     <ImageButton
@@ -30,6 +38,12 @@
         android:background="@drawable/settings_button_drawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+    <ProgressBar
+        android:id="@+id/address_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"
+        android:visibility="gone" />
 
 </RelativeLayout>
