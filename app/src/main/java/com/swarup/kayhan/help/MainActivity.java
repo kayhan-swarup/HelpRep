@@ -4,10 +4,12 @@ package com.swarup.kayhan.help;
 
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,6 +47,16 @@ public class MainActivity extends Activity implements LocationListener{
                 break;
             case R.id.settings_button:
                 startActivity(new Intent(getBaseContext(),ActivitySettings.class));
+                break;
+            case R.id.getLocation:
+                PowerManager manager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+
+                manager.goToSleep(100);
+
+                PowerManager.WakeLock wl = manager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "help");
+                wl.acquire();
+                wl.release();
+
                 break;
             default:
                 break;
